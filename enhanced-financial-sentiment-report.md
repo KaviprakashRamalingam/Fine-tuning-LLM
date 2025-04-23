@@ -560,21 +560,13 @@ for text in test_texts:
    - Explore multi-task learning by adding related financial prediction tasks
    - Investigate domain adaptation techniques to improve generalization
 
-![Future Improvements Roadmap](https://raw.githubusercontent.com/username/financialsentiment/main/images/future_improvements.png)
-
 ## 9. Conclusion
 
 This project successfully fine-tuned a DistilBERT model for financial sentiment analysis, achieving an 86.75% accuracy on the test set, which represents a 22.52 percentage point improvement over the non-fine-tuned baseline. The error analysis revealed specific challenges in financial text understanding that provide direction for future improvements.
 
 The developed model demonstrates the effectiveness of transfer learning in specialized domains like finance. With the documented inference pipeline, this model can be readily deployed for automated financial sentiment analysis applications.
 
-```python
-# Save the final model
-trainer.save_model("./financial-sentiment-model")
-tokenizer.save_pretrained("./financial-sentiment-model")
 
-print("Model and tokenizer saved successfully!")
-```
 
 ## 10. References
 
