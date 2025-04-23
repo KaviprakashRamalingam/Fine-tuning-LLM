@@ -247,6 +247,9 @@ The developed model demonstrates the effectiveness of transfer learning in speci
 
 <img src="assets/conclusion.png" alt="Sentiment Chart" width="400"/>
 
+<img src="assets/output1.png" alt="Sentiment Chart" width="700"/>
+
+<img src="assets/output2.png" alt="Sentiment Chart" width="700"/>
 
 ## 10. References
 
