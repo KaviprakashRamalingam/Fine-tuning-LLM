@@ -95,6 +95,43 @@ We performed a systematic search over the following hyperparameters:
 - **Early stopping**: Implemented with patience of 2 epochs based on validation accuracy
 - **Checkpointing**: Saved model weights after each epoch
 
+## 4.4 Hyperparameter Tuning
+
+To further improve model performance, we conducted **automated hyperparameter optimization** using Hugging Face's built-in `Trainer.hyperparameter_search()` method, which leverages the Optuna optimization library under the hood.
+
+### 4.4.1 Search Space
+
+The following hyperparameters were selected for tuning:
+
+| Hyperparameter              | Search Range                 |
+|----------------------------|------------------------------|
+| Learning Rate              | Log-uniform: 1e-5 → 5e-5     |
+| Number of Training Epochs  | Integer: 3 → 6               |
+| Batch Size                 | Categorical: [8, 16, 32]     |
+
+A total of **10 trials** were performed to explore combinations within this space.
+
+### 4.4.2 Optimization Strategy
+
+- **Objective**: Maximize validation accuracy  
+- **Model Initialization**: A fresh instance of DistilBERT was initialized for each trial  
+- **Evaluation Metric**: Accuracy on the validation set  
+- **Infrastructure**: Google Colab with GPU acceleration
+
+### 4.4.3 Best Configuration Found
+
+The best hyperparameter combination identified was:
+
+Learning Rate: 3e-5
+
+Batch Size: 16
+
+Epochs: 5
+
+This configuration was used for the final training and evaluation reported in Section 5
+
+<img src="assets/hyperparameter" alt="Sentiment Chart" width="400"/>
+
 ## 5. Results and Evaluation
 
 ### 5.1 Performance Metrics
